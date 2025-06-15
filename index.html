@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-VideoPlayer</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="video-container">
+      <div class="file-input-container" id="fileInputContainer">
+        <input type="file" id="fileInput" accept="video/*" style="display: none;">
+        <div class="file-drop-zone" id="fileDropZone">
+          <div class="upload-icon">
+            <svg viewBox="0 0 24 24" width="48" height="48">
+              <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Load Your Video</h3>
+          <p>Click to browse or drag & drop a video file</p>
+          <button class="upload-btn" id="uploadBtn">Choose Video File</button>
+          <div class="file-formats">
+            <small>Supports: MP4, WebM, AVI, MOV, MKV</small>
+          </div>
+          <div class="url-input-section">
+            <p>Or load video from URL:</p>
+            <div class="url-input-container">
+              <input type="url" id="videoUrl" placeholder="Enter video URL (http/https)" class="url-input">
+              <button class="url-load-btn" id="loadUrlBtn">Load URL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="video-wrapper">
+<video id="video" preload="metadata">
+<source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+  <div class="demo-text" id="demoText">
+    <h3>Custom Video Player</h3>
+    <p>Click play to start the demo video</p>
+    <small>Big Buck Bunny sample video</small>
+  </div>
+</div>
+
+  <div class="controls" id="controls">
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="controls-row">
+      <button class="material-icons-outlined btn" title="Rewind 10 seconds">
+        <span id="rewindBtn">replay_10</span>
+      </button>
+      <button class="material-icons-outlined btn play-btn" id="playBtn">
+        <span id="playIcon">play_circle</span>
+        <span id="pauseIcon" style="display: none;">pause_circle</span>
+      </button>
+      <button class="material-icons-outlined btn" title="Forward 10 seconds">
+        <span id="forwardBtn">forward_10</span>
+      </button>
+      <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
+      <div class="spacer"></div>
+      <button class="material-icons-outlined btn" title="Rotate -90°">
+        <span id="rotateLeftBtn">rotate_90_degrees_ccw</span>
+      </button>
+      <button class="material-icons-outlined btn" title="Rotate +90°">
+        <span id="rotateRightBtn">rotate_90_degrees_cw</span>
+      </button>
+      <button class="material-icons-outlined btn" title="Take screenshot">
+        <span id="screenshotBtn">photo_camera</span>
+      </button>
+      <button class="material-icons-outlined btn" title="Load local video file">
+        <span id="fileBtn">file_open</span>
+      </button>
+      <div class="volume-container">
+        <button class="material-icons-outlined btn" id="muteBtn">
+          <span id="volumeIcon">volume_up</span>
+          <span id="muteIcon" style="display: none;">volume_off</span>
+        </button>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="100">
+      </div>
+      <div class="speed-container">
+        <button class="btn" id="speedBtn">
+          <span id="speedText">1x</span>
+        </button>
+        <div class="speed-menu" id="speedMenu">
+        <div class="speed-option" data-speed="0.25">0.25x</div>
+        <div class="speed-option" data-speed="0.5">0.5x</div>
+        <div class="speed-option" data-speed="0.75">0.75x</div>
+        <div class="speed-option active" data-speed="1">1x</div>
+        <div class="speed-option" data-speed="1.25">1.25x</div>
+        <div class="speed-option" data-speed="1.5">1.5x</div>
+        <div class="speed-option" data-speed="1.75">1.75x</div>
+        <div class="speed-option" data-speed="2">2x</div>
+        </div>
+      </div>
+      <button class="material-icons-outlined btn">
+        <span id="fullscreenBtn">fullscreen</span>
+      </button>
+    </div>
+  </div>
+</div>
+<script src="./script.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>
