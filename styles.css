@@ -64,6 +64,7 @@ body {
 }
 
 .upload-icon {
+  font-size: 48px;
   margin-bottom: 20px;
   opacity: 0.7;
 }

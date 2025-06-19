@@ -69,7 +69,6 @@ class VideoPlayer {
     this.fileBtn.addEventListener('click', () => this.openFileDialog());
     this.fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
     this.uploadBtn.addEventListener('click', () => this.openFileDialog());
-    this.fileDropZone.addEventListener('click', () => this.openFileDialog());
     this.fileDropZone.addEventListener('dragover', (e) => this.handleDragOver(e));
     this.fileDropZone.addEventListener('dragleave', (e) => this.handleDragLeave(e));
     this.fileDropZone.addEventListener('drop', (e) => this.handleFileDrop(e));
@@ -200,19 +199,19 @@ document.body.appendChild(notification);
 
 // Animate in
 requestAnimationFrame(() => {
-notification.style.opacity = '1';
-notification.style.transform = 'translateX(0)';
+  notification.style.opacity = '1';
+  notification.style.transform = 'translateX(0)';
 });
 
 // Animate out and remove
 setTimeout(() => {
-notification.style.opacity = '0';
-notification.style.transform = 'translateX(100%)';
-setTimeout(() => {
-if (notification.parentElement) {
-notification.parentElement.removeChild(notification);
-}
-}, 300);
+  notification.style.opacity = '0';
+  notification.style.transform = 'translateX(100%)';
+  setTimeout(() => {
+    if (notification.parentElement) {
+      notification.parentElement.removeChild(notification);
+    }
+  }, 300);
 }, 3000);
 }
 
